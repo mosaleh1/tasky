@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "57796208-6190-4a28-8e39-563713166873",
+		"name": "tasky",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25646255"
+	},
+	"item": [
+		{
+			"name": "registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Ahmed Saleh\",\n  \"email\": \"Ahmed@example.com\",\n  \"password\": \"password123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"Ahmed@example.com\",\n  \"password\": \"password123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBaG1lZEBleGFtcGxlLmNvbSIsImlhdCI6MTc1ODM0MDA5MCwiZXhwIjoxNzU4NDI2NDkwfQ.vExaGDM1K9FOgiDGRqxYMujXtinM0BtmC7-EgkANe1Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Complete API documentation\",\n  \"description\": \"Write comprehensive API documentation with examples\",\n  \"status\": \"OPEN\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/tasks",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all tasks",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBaG1lZEBleGFtcGxlLmNvbSIsImlhdCI6MTc1ODM0MDA5MCwiZXhwIjoxNzU4NDI2NDkwfQ.vExaGDM1K9FOgiDGRqxYMujXtinM0BtmC7-EgkANe1Q",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Completed API documentation EDITED\",\n  \"description\": \"Write comprehensive API documentation with examples\",\n  \"status\": \"OPEN\"\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/tasks/2",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"tasks",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBaG1lZEBleGFtcGxlLmNvbSIsImlhdCI6MTc1ODM0MDA5MCwiZXhwIjoxNzU4NDI2NDkwfQ.vExaGDM1K9FOgiDGRqxYMujXtinM0BtmC7-EgkANe1Q",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/tasks/2",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"tasks",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
